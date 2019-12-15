@@ -6,16 +6,16 @@ import matches from "./card.json";
 import "./App.css";
 
 let correctGuesses = 0;
-let bestScore = 0;
-let clickMessage = "Click on an image to earn points, but don't click on any more than once!";
+let score = 0;
+let clicked = "Click on an image to earn points, but don't click on any more than once!";
 
 class App extends Component {
 
   state = {
     matches,
     correctGuesses,
-    bestScore,
-    clickMessage
+    score,
+    clicked
   };
 
   setClicked = id => {
@@ -27,16 +27,16 @@ class App extends Component {
     if (clickedMatch[0].clicked) {
 
       console.log("Correct Guesses: " + correctGuesses);
-      console.log("Best Score: " + bestScore);
+      console.log("Best Score: " + score);
 
       correctGuesses = 0;
-      clickMessage = "Bummer! You already clicked on this one."
+      clicked = "Ya already clicked this one bud"
 
       for (let i = 0; i < matches.length; i++) {
         matches[i].clicked = false;
       }
 
-      this.setState({ clickMessage });
+      this.setState({ clicked });
       this.setState({ correctGuesses });
       this.setState({ matches });
 
@@ -47,27 +47,27 @@ class App extends Component {
 
       correctGuesses++;
 
-      clickMessage = "Great! You haven't click on that one yet! Keep going!";
+      clicked = "Wooooo!";
 
-      if (correctGuesses > bestScore) {
-        bestScore = correctGuesses;
-        this.setState({ bestScore });
+      if (correctGuesses > score) {
+        score = correctGuesses;
+        this.setState({ score });
       }
 
       matches.sort(function (a, b) { return 0.5 - Math.random() });
 
       this.setState({ matches });
       this.setState({ correctGuesses });
-      this.setState({ clickMessage });
+      this.setState({ clicked });
     } else {
 
       clickedMatch[0].clicked = true;
 
       correctGuesses = 0;
 
-      clickMessage = "Good job!";
-      bestScore = 12;
-      this.setState({ bestScore });
+      clicked = "Good job!";
+      score = 12;
+      this.setState({ score });
 
       for (let i = 0; i < matches.length; i++) {
         matches[i].clicked = false;
@@ -76,7 +76,7 @@ class App extends Component {
 
       this.setState({ matches });
       this.setState({ correctGuesses });
-      this.setState({ clickMessage });
+      this.setState({ clicked });
 
     }
   };
@@ -87,13 +87,13 @@ class App extends Component {
         <Title>Clicky Game</Title>
 
         <h3 className="scoreSummary">
-          {this.state.clickMessage}
+          {this.state.clicked}
         </h3>
 
         <h3 className="scoreSummary card-header">
           Correct Guesses: {this.state.correctGuesses}
           <br />
-          Best Score: {this.state.bestScore}
+          Best Score: {this.state.score}
         </h3>
         <div className="container">
           <div className="row">
