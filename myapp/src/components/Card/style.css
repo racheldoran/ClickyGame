@@ -10,7 +10,7 @@
 .card>.img-container {
     overflow: hidden;
     text-align: center;
-    background: black;
+    background:whitesmoke;
     justify-content: center;  
     margin: 20px;   
 }
