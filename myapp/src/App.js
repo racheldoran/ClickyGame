@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import MatchCard from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import matches from "./matchcards.json";
+import matches from "./card.json";
 import "./App.css";
 
 let correctGuesses = 0;

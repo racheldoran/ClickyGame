@@ -1,16 +1,16 @@
 [{
     "id": 1,
-    "image": "./assets/images/antman.jpg",
+    "image": "https://images.complex.com/complex/images/c_limit,dpr_auto,q_90,w_720/fl_lossy,pg_1/vtbhlkfylh1v6npyvawr/spongebob-squarepants-nickelodeon-press",
     "clicked": false
 },
 {
     "id": 2,
-    "image": "./assets/images/forceAwakens.jpg",
+    "image": "https://advancelocal-adapter-image-uploads.s3.amazonaws.com/image.cleveland.com/home/cleve-media/width2048/img/ent_impact_home/photo/20878905-standard.jpg",
     "clicked": false
 },
 {
     "id": 3,
-    "image": "./assets/images/ghostbusters.jpg",
+    "image": "https://imgix.bustle.com/rehost/2016/9/13/f8a71144-e68e-4564-9233-d8fece82eb1a.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70",
     "clicked": false
 },
 {
